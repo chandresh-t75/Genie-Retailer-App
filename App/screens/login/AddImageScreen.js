@@ -29,7 +29,6 @@ import { useDispatch } from "react-redux";
 import { setImages } from "../../redux/reducers/storeDataSlice";
 import ModalCancel from "../../components/ModalCancel";
 import { manipulateAsync } from "expo-image-manipulator";
-import Slider from "@react-native-community/slider";
 import { AntDesign } from "@expo/vector-icons";
 
 const AddImageScreen = () => {

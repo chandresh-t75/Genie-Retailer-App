@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import store from './App/redux/store';
 import messaging from '@react-native-firebase/messaging';
 import { Alert } from 'react-native';
+import { useEffect } from 'react';
 
 
 export default function App() {
@@ -22,7 +23,7 @@ export default function App() {
     }
   }
 
-  useEffect=(()=>{
+  useEffect(()=>{
 
     if(requestUserPermission()){
         messaging().getToken().then(token=>{
@@ -30,7 +31,7 @@ export default function App() {
         })
     }
     else{
-      console.log("permission not granted",authStatus)
+      console.log("permission not granted",authStatus);
     }
 
     messaging().getInitialNotification().then(async(remoteMessage)=>{
