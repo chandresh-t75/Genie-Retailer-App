@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1576030824",
+    "project_id": "genieretailer",
+    "storage_bucket": "genieretailer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1576030824:android:8a815b9941642e9e9de1dd",
+        "android_client_info": {
+          "package_name": "com.culturtapgenieretailer.GenieApp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCciEgsGKr_jRrln0zNUId1WjzDoVLQr2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
