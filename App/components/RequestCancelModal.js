@@ -13,7 +13,7 @@ const RequestCancelModal= ({modalVisible,setModalVisible,requestInfo}) => {
       try {
         console.log("RequestType canecl response", requestInfo);
         const res = await axios.patch(
-          "http://192.168.86.128:5000/chat/modify-spade-retailer",
+          "https://genie-backend-meg1.onrender.com/chat/modify-spade-retailer",
           {
             id: requestInfo?._id,
             type: "cancelled"

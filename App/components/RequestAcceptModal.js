@@ -20,7 +20,7 @@ const RequestAcceptModal= ({modalVisible,setModalVisible,messages,setMessages,re
       if (requestInfo?.requestType === "new") {
         try {
           const res = await axios.patch(
-            "http://192.168.86.128:5000/chat/modify-spade-retailer",{
+            "https://genie-backend-meg1.onrender.com/chat/modify-spade-retailer",{
               id:requestInfo?._id,
               type:"ongoing"
             }
@@ -34,7 +34,7 @@ const RequestAcceptModal= ({modalVisible,setModalVisible,messages,setMessages,re
       } else {
         try {
           const accept = await axios.patch(
-            `http://192.168.86.128:5000/chat/accept-bid`,
+            `https://genie-backend-meg1.onrender.com/chat/accept-bid`,
             {
               
                 id: requestInfo?.requestId?._id,
@@ -48,7 +48,7 @@ const RequestAcceptModal= ({modalVisible,setModalVisible,messages,setMessages,re
           if (accept.status === 200) {
             try {
               const response = await axios.patch(
-                "http://192.168.86.128:5000/chat/update-message",
+                "https://genie-backend-meg1.onrender.com/chat/update-message",
                 {
                   id: lastMessage._id,
                   type: "accepted",

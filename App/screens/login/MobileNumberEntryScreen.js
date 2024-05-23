@@ -153,7 +153,7 @@ const MobileNumberEntryScreen = () => {
       const phoneNumber = countryCode + mobileNumber;
       console.log("phone", phoneNumber);
       const response = await axios.get(
-        "http://192.168.86.128:5000/retailer/",
+        "https://genie-backend-meg1.onrender.com/retailer/",
         {
           params: {
             storeMobileNo: phoneNumber,

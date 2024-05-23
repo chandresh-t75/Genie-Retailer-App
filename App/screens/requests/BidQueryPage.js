@@ -49,7 +49,7 @@ const BidQueryPage = () => {
 
             
 
-            const response = await axios.post('http://192.168.86.128:5000/chat/send-message',{
+            const response = await axios.post('https://genie-backend-meg1.onrender.com/chat/send-message',{
             sender: {
                 type: "Retailer",
                 refId: user?._id
@@ -63,7 +63,7 @@ const BidQueryPage = () => {
               });
            console.log("res",response);
            if(response.status===201){
-             console.log("messages",response.data);
+             console.log("messages recieved",response.data);
              setQuery("");
              socket.emit('new message',response.data);
              navigation.navigate("requestPage",{data:requestInfo})

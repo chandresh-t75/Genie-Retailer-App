@@ -64,8 +64,8 @@ const RequestPage = () => {
    
       const userData = JSON.parse(await AsyncStorage.getItem("userData"));
       setUser(userData);
-      socket.emit('setup', userData._id);
-      console.log('user connected with userId',userData?._id);
+      socket.emit('setup', requestInfo.users[0]._id);
+      console.log('user connected with userId',requestInfo.users[0]._id);
       // console.log()
       socket.on('connected', () => {
         setSocketConnected(true);
@@ -87,7 +87,7 @@ const RequestPage = () => {
         // console.log("requestPage", requestInfo);
         //   if (route.params.data) {
         const response = await axios.get(
-          "http://192.168.86.128:5000/chat/get-spade-messages",
+          "https://genie-backend-meg1.onrender.com/chat/get-spade-messages",
           {
             params: {
               id: requestInfo._id,
@@ -184,7 +184,7 @@ const RequestPage = () => {
       // console.log("Message updated successfully:", res.data);
       try {
         const response = await axios.patch(
-          "http://192.168.86.128:5000/chat/update-message",
+          "https://genie-backend-meg1.onrender.com/chat/update-message",
           {
             id: lastMessage._id,
             type: "rejected",
@@ -331,9 +331,9 @@ const RequestPage = () => {
              
             /> */}
             {messages?.map((message) => {
-              // console.log("mapping", message); // You can move console.log outside of the return statement if you want to log the value
+              console.log("mapping", message); // You can move console.log outside of the return statement if you want to log the value
               if (message?.sender?.refId !== user?._id) {
-                if (message?.bidType === "true") {
+                if (message?.bidType === "true" || messages[0]===message) {
                   return (
                     <View key={message._id} className="flex flex-row justify-start">
                       <UserBidMessage bidDetails={message} />

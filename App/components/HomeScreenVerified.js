@@ -26,7 +26,7 @@ const HomeScreenVerified = () => {
   const fetchNewRequests = async () => {
     try {
       const userData = JSON.parse(await AsyncStorage.getItem('userData'));
-      const response = await axios.get(`http://192.168.86.128:5000/chat/retailer-new-spades?id=${userData?._id}`);
+      const response = await axios.get(`https://genie-backend-meg1.onrender.com/chat/retailer-new-spades?id=${userData?._id}`);
       dispatch(setNewRequests(response.data));
       setRequest(true);
     } catch (error) {
@@ -37,7 +37,7 @@ const HomeScreenVerified = () => {
   const fetchOngoingRequests = async () => {
     try {
       const userData = JSON.parse(await AsyncStorage.getItem('userData'));
-      const ongoingresponse = await axios.get(`http://192.168.86.128:5000/chat/retailer-ongoing-spades?id=${userData?._id}`);
+      const ongoingresponse = await axios.get(`https://genie-backend-meg1.onrender.com/chat/retailer-ongoing-spades?id=${userData?._id}`);
       dispatch(setOngoingRequests(ongoingresponse.data));
       setRequest(true);
     } catch (error) {
